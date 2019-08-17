@@ -161,11 +161,6 @@
             <artifactId>maven-resources-plugin</artifactId>
             <version>2.2</version>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.38</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -191,14 +186,13 @@
                     <overwrite>true</overwrite>
                 </configuration>
 
-                <executions>
-                    <execution>
-                        <id>Generate MyBatis Artifacts</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.38</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
 
