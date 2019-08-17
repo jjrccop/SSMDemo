@@ -1,4 +1,4 @@
-    ··<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
@@ -26,9 +26,9 @@
         <!-- 必须要有的，使用这个配置链接数据库 -->
         <jdbcConnection
                 driverClass = "com.mysql.jdbc.Driver"
-                connectionURL = "jdbc:mysql://localhost:3306/gxa_eloan"
-                userId = "jsprun"
-                password = "jsprun"
+                connectionURL = "jdbc:mysql://localhost:3306/ssm"
+                userId = "root"
+                password = "6526423"
         />
 
 
@@ -36,7 +36,7 @@
         targetPackage     指定生成的model生成所在的包名
         targetProject     指定在该项目下所在的路径
         如果目录不存在，MBG不会自动建目录 -->
-        <javaModelGenerator targetPackage="com.gxa.eloan.common.domain"
+        <javaModelGenerator targetPackage="com.jerry.mybatis.common.domain"
                             targetProject="src/main/java">
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="true"/>
@@ -49,20 +49,11 @@
         </javaModelGenerator>
 
         <!-- 生成SQL map的XML文件生成器， 注意，在Mybatis3之后，我们可以使用mapper.xml文件+Mapper接口 -->
-        <sqlMapGenerator targetPackage="com.gxa.eloan.common.mapper"
+        <sqlMapGenerator targetPackage="com.jerry.mybatis.common.mapper"
                          targetProject="src/main/java">
-            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-
-        <!-- 对于mybatis来说，即生成Mapper接口，注意，如果没有配置该元素，那么默认不会生成Mapper接口
-            type：选择怎么生成mapper接口（在MyBatis3/MyBatis3Simple下）：
-
-        type="ANNOTATEDMAPPER",生成Java Model和基于注解的Mapper对象
-        type="MIXEDMAPPER",生成基于注解的Java Model和相应的Mapper对象
-        type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
-        注意，如果context是MyBatis3Simple：只支持ANNOTATEDMAPPER和XMLMAPPER -->
-        <javaClientGenerator targetPackage="com.gxa.eloan.common.mapper"
+        <javaClientGenerator targetPackage="com.jerry.mybatis.common.mapper"
                              targetProject="src/main/java"
                              type="XMLMAPPER">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
